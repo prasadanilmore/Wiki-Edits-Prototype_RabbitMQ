@@ -94,4 +94,8 @@ To remove and clean up the containers: ```docker-compose down -v --rmi all --rem
 
 4. Expand your server to access the databases, and you will find the wikipedia_data database.
 
+<<<<<<< HEAD
 5. You can use pgAdmin to write SQL queries, analyze data, and visualize results.
+=======
+5. You can use pgAdmin to write SQL queries, analyze data, and visualize results.
+>>>>>>> b7666822e3de8cbe55a58850dfe287a12906bcdd
