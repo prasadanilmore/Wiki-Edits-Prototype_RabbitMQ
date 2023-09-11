@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This project is a prototype for a data transformation and analysis system for Wikipedia changes. It involves a producer that reads sample data and emits it at random intervals of 0 to 1 into a RabbitMQ queue. A consumer then reads this data from the queue, performs aggregations, and stores the results in a PostgreSQL database. The system aims to provide insights into current Wikipedia trends and historical changes.
+This project serves as a prototype demonstrating RabbitMQ's capabilities with a "direct" exchange type. It comprises two key components: a producer that emits sample data at random intervals (between 0 and 1 second) and a RabbitMQ consumer. The consumer processes this data, performing aggregations, including tracking the global and german number of edits per minuteas well as stores the data in PostgreSQL database.
 
 ## Project Overview
 
