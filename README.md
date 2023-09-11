@@ -63,10 +63,12 @@ To access the RabbitMQ management dashboard, open your web browser and navigate 
 ### Stopping the Containers:
 
 To stop the containers use the following command:
+    
     ```bash
     docker-compose down
 
 To remove and clean up the containers:
+    
     ```bash
     docker-compose down -v --rmi all --remove-orphans
 
