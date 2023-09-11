@@ -5,7 +5,6 @@ services:
 
   # rabbit_mq container uses the default rabbitmq image
   rabbit_mq:
-
     image: rabbitmq:3.8-rc-management
     container_name: rabbit_mq
     ports:
@@ -16,7 +15,6 @@ services:
 
   database:
     image: postgres:latest
-    container_name: postgres
     environment:
       POSTGRES_DB: europace_db
       POSTGRES_USER: europace
