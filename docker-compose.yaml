@@ -1,0 +1,66 @@
+version: "3.2"
+
+# list of containers to be run
+services:
+
+  # rabbit_mq container uses the default rabbitmq image
+  rabbit_mq:
+
+    image: rabbitmq:3.8-rc-management
+    container_name: rabbit_mq
+    ports:
+        - '5672:5672'
+        - '15672:15672'
+    volumes:
+      - rabbit_mqdata:/usr/share/rabbitmq/data
+
+  database:
+    image: postgres:latest
+    container_name: postgres
+    environment:
+      POSTGRES_DB: europace_db
+      POSTGRES_USER: europace
+      POSTGRES_PASSWORD: europace
+    volumes:
+      - postgres_data:/usr/share/postgresql/data
+    ports:
+      - "5432:5432"
+
+  # PostgreSQL web UI to see the real-time data storing
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@europace.com
+      PGADMIN_DEFAULT_PASSWORD: 1234
+    ports:
+      - "8080:80"
+    depends_on:
+      - database
+
+  # Produces container builds the producer image and produces message to the queue
+  producer:
+    build: producer
+    depends_on:
+        - rabbit_mq
+    environment:
+        AMQP_URL: 'amqp://rabbit_mq?connection_attempts=10&retry_delay=10'
+    volumes:
+      - ./producer:/usr/src/app/producer
+
+  # Consumer container builds the consumer image and consumes messages from the queue
+  consumer:
+    build: consumer
+    depends_on:
+        - rabbit_mq
+        - database
+    environment:
+        AMQP_URL: 'amqp://rabbit_mq?connection_attempts=10&retry_delay=10'
+    volumes:
+      - ./consumer:/usr/src/app/consumer
+
+volumes:
+    rabbit_mqdata:
+      driver: local
+    postgres_data:
+      driver: local
