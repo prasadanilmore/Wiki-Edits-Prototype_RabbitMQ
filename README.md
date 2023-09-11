@@ -14,11 +14,12 @@ The project consists of the following components:
 
 ## Getting Started
 
-### Dependencies
-
+### Prerequites
 Before running the project, ensure you have the following prerequisites installed:
 
 - [Docker](https://www.docker.com/get-started) - for containerization.
+
+### Dependencies
 - Python 3.7
 - Docker
 - RabbitMQ 3.8-rc-management
