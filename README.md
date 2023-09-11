@@ -58,19 +58,13 @@ This will start the RabbitMQ, producer, and consumer containers.
     docker-compose logs -f producer
     docker-compose logs -f consumer
 
-To access the RabbitMQ management dashboard, open your web browser and navigate to http://localhost:15672. Login with the default credentials (username: 'admin', password: '1234').
+To access the RabbitMQ management dashboard, open your web browser and navigate to http://localhost:15672. Login with the default credentials (username: 'admin', password: '1234')
 
 ### Stopping the Containers:
 
-To stop the containers use the following command:
-    
-    ```bash
-    docker-compose down
+To stop the containers use the following command: ```bash docker-compose down
 
-To remove and clean up the containers:
-    
-    ```bash
-    docker-compose down -v --rmi all --remove-orphans
+To remove and clean up the containers: ```bash docker-compose down -v --rmi all --remove-orphans
 
 ### Monitoring the PostgreSQL Database with pgAdmin
 
