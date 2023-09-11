@@ -2,24 +2,26 @@
 
 ## Introduction
 
-This project serves as a prototype demonstrating RabbitMQ's capabilities with a "direct" exchange type. It comprises two key components: a producer that emits sample data at random intervals (between 0 and 1 second) and a RabbitMQ consumer. The consumer processes this data, performing aggregations, including tracking the global and german number of edits per minuteas well as stores the data in PostgreSQL database.
+This project is a prototype for a data transformation and analysis system for Wikipedia changes. It involves a producer that reads sample data and emits it at random intervals of 0 to 1 into a RabbitMQ queue. A consumer then reads this data from the queue, performs aggregations, and stores the results in a PostgreSQL database. The system aims to provide insights into current Wikipedia trends and historical changes.
 
 ## Project Overview
 
 The project consists of the following components:
 
-- A RabbitMQ container for message queuing.
-- A producer container for generating and publishing Wikipedia data to the RabbitMQ queue.
-- A consumer container for consuming data from the RabbitMQ queue, performing aggregations, and storing the results in a PostgreSQL database.
+- RabbitMQ Messaging: Utilizes RabbitMQ as a message broker to facilitate seamless communication between components.
+- Exchange Type: Leverages the "direct" exchange type for precise routing of messages, enhancing message processing efficiency.
+- Data Aggregation: The RabbitMQ consumer performs crucial data aggregation tasks, including tracking global edits and German Wikipedia edits per minute.
+- PostgreSQL Integration: Incorporates PostgreSQL as the database system for efficient data storage.
+- Dockerized Solution: Implements Docker for containerized deployment, ensuring portability and scalability.
+- Monitoring: Provides easy access to monitoring interfaces such as the RabbitMQ management dashboard and pgAdmin web UI.
 
 ## Getting Started
 
-### Prerequites
+### Dependencies
+
 Before running the project, ensure you have the following prerequisites installed:
 
 - [Docker](https://www.docker.com/get-started) - for containerization.
-
-### Dependencies
 - Python 3.7
 - Docker
 - RabbitMQ 3.8-rc-management
