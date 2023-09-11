@@ -24,9 +24,10 @@ Before running the project, ensure you have the following prerequisites installe
 
 ### Dependencies
 - Python 3.7
+- Pandas 1.3.5
 - RabbitMQ 3.8-rc-management
-- Pika 1.1.0
-- PostgreSQL (for data storage and analysis)
+- Pika 1.3
+- psycopg2 (PostgreSQL) (for data storage and analysis)
 - pgAdmin (for monitoring)
 
 ## Run the Program
@@ -94,8 +95,5 @@ To remove and clean up the containers: ```docker-compose down -v --rmi all --rem
 
 4. Expand your server to access the databases, and you will find the wikipedia_data database.
 
-<<<<<<< HEAD
 5. You can use pgAdmin to write SQL queries, analyze data, and visualize results.
-=======
-5. You can use pgAdmin to write SQL queries, analyze data, and visualize results.
->>>>>>> b7666822e3de8cbe55a58850dfe287a12906bcdd
+
