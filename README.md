@@ -26,6 +26,8 @@ Before running the project, ensure you have the following prerequisites installe
 - PostgreSQL (for data storage and analysis)
 - pgAdmin (for monitoring)
 
+## Run the Program
+
 ### Setting Up Docker
 
 1. Clone this repository to your local machine:
@@ -39,7 +41,6 @@ Before running the project, ensure you have the following prerequisites installe
 2. Build the images from the docker-compose.yml file
     ```bash
     docker-compose build
-
 
 ### Running the Project
 
@@ -59,9 +60,13 @@ This will start the RabbitMQ, producer, and consumer containers.
 
 To access the RabbitMQ management dashboard, open your web browser and navigate to http://localhost:15672. Login with the default credentials (username: 'admin', password: '1234').
 
-## Stopping the Containers:
+### Stopping the Containers:
 
-To stop the containers and remove them, use the following command:
+To stop the containers use the following command:
+    ```bash
+    docker-compose down
+
+To remove and clean up the containers
     ```bash
     docker-compose down -v --rmi all --remove-orphans
 
