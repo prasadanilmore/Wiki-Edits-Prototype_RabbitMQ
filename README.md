@@ -87,13 +87,13 @@ To remove and clean up the containers: ```docker-compose down -v --rmi all --rem
 
         - Name: Enter a name for your server (e.g., "PostgreSQL Server").
         - Host name/address: Use the name of the PostgreSQL service in your Docker network (e.g., postgres) or localhost.
-        - Port: 5432
-        - Maintenance database: europace_db (the name of your database).
-        - Username: europace (the username you set during the setup).
-        - Password: europace (the password you set during the setup).
+        - Port: '5432'
+        - Maintenance database: 'europace_db' (the name of your database).
+        - Username: 'europace' (the username you set during the setup).
+        - Password: 'europace' (the password you set during the setup).
         - Click "Save" to add the server.
 
-4. Expand your server to access the databases, and you will find the wikipedia_data database.
+4. Expand your server to access the databases, and you will find the database.
 
 5. You can use pgAdmin to write SQL queries, analyze data, and visualize results.
 
