@@ -24,7 +24,6 @@ Before running the project, ensure you have the following prerequisites installe
 
 ### Dependencies
 - Python 3.7
-- Docker
 - RabbitMQ 3.8-rc-management
 - Pika 1.1.0
 - PostgreSQL (for data storage and analysis)
