@@ -27,4 +27,8 @@ Before running the project, ensure you have the following prerequisites installe
    ```bash
    git clone https://github.com/prasadanilmore/wikipedia-data-analysis.git
    cd wikipedia-data-analysis
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> 24e514f88e62f1d56afe2c33533bc59b00617043
